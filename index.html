@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Encontro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #1F2937;
+            color: #FFFFFF;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #FBBF24;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #1F2937;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            color: #abaaaa;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        .font-example {
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .font-example:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        #details {
+            margin-top: 20px;
+            background-color: #FFFFFF;
+            padding: 20px;
+            border: solid;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #1F2937;
+            /* Fundo escuro para o footer */
+            color: #FFFFFF;
+            /* Texto claro para contraste */
+            padding: 30px 20px;
+            /* Espaçamento interno */
+        }
+
+        .footer-container {
+            display: flex;
+            /* Flexbox para distribuir as seções */
+            justify-content: space-between;
+            /* Espaço igual entre as seções */
+            max-width: 1200px;
+            /* Largura máxima */
+            margin: auto;
+            /* Centraliza o conteúdo */
+        }
+
+        .footer-section {
+            flex: 1;
+            /* Cada seção ocupa espaço igual */
+            margin-right: 20px;
+            /* Espaçamento entre seções */
+        }
+
+        .footer-section:last-child {
+            margin-right: 0;
+            /* Remove margem do último item */
+        }
+
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            /* Fonte para os títulos */
+            font-size: 18px;
+            /* Tamanho do texto para título */
+        }
+
+        p,
+        ul {
+            font-family: 'Arial', sans-serif;
+            /* Fonte padrão */
+            font-size: 14px;
+            /* Tamanho do texto padrão */
+        }
+
+        ul {
+            list-style: none;
+            /* Remove marcadores da lista */
+            padding: 0;
+            /* Remove preenchimento */
+        }
+
+        ul li {
+            margin: 5px 0;
+            /* Espaçamento entre itens da lista */
+        }
+
+        a {
+            color: #FBBF24;
+            /* Cor dos links */
+            text-decoration: none;
+            /* Remove sublinhado */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* Sublinha no hover */
+        }
+
+        .social-media {
+            display: flex;
+            /* Flexbox para alinhar os ícones */
+            padding: 0;
+            /* Remover padding */
+        }
+
+        .social-media li {
+            margin: 0 10px;
+            /* Espaçamento entre os ícones */
+        }
+
+        .social-media img {
+            width: 25px;
+            /* Tamanho dos ícones sociais */
+            height: 25px;
+            /* Tamanho dos ícones sociais */
+        }
+
+        .footer-bottom {
+            text-align: center;
+            /* Centraliza o texto no rodapé */
+            margin-top: 20px;
+            /* Espaçamento acima */
+            font-size: 14px;
+            /* Tamanho do texto padrão */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>O Encontro</h1>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0);" onclick="showSection('paleta-cores')">Cores</a>
+        <a href="javascript:void(0);" onclick="showSection('fontes')">Fontes</a>
+    </nav>
+
+    <section id="paleta-cores">
+        <h2>Paleta de Cores</h2>
+        <p>Cores vibrantes para o projeto:</p>
+        <div class="color-box" style="background-color: #3B82F6;" data-color="#3B82F6"
+            onclick="showDetails('color', '#3B82F6')">#3B82F6</div>
+        <div class="color-box" style="background-color: #7C3AED;" data-color="#7C3AED"
+            onclick="showDetails('color', '#7C3AED')">#7C3AED</div>
+        <div class="color-box" style="background-color: #FBBF24;" data-color="#FBBF24"
+            onclick="showDetails('color', '#FBBF24')">#FBBF24</div>
+        <div class="color-box" style="background-color: #FFFFFF; border: 1px solid #E5E7EB;" data-color="#FFFFFF"
+            onclick="showDetails('color', '#FFFFFF')">#FFFFFF</div>
+        <div class="color-box" style="background-color: #1F2937;" data-color="#1F2937"
+            onclick="showDetails('color', '#1F2937')">#1F2937</div>
+    </section>
+
+    <section id="fontes" style="display: none;">
+        <h2>Fontes</h2>
+        <div class="font-example" style="font-family: 'Montserrat'; font-size: 24px;"
+            onclick="showFontDetails('Montserrat')">Exemplo de Título: Semana da Juventude 2024</div>
+        <div class="font-example" style="font-family: 'Pacifico'; font-size: 20px;"
+            onclick="showFontDetails('Pacifico')">Exemplo Decorativo: Conectados com o Futuro</div>
+        <div class="font-example" style="font-family: 'Poppins'; font-size: 16px;" onclick="showFontDetails('Poppins')">
+            Informações como local e horário dos eventos.</div>
+    </section>
+
+    <div id="details" style="display: none;"></div>
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contatos</h3>
+                <p>Email: contato@oencontro.com</p>
+                <p>Telefone: (00) 0000-0000</p>
+                <p>Endereço: Rua Exemplo, 123, Brasília, DF</p>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="social-media">
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <img src="facebook-icon.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                            <img src="twitter-icon.png" alt="Twitter" />
+                        </a>
+                    </li> -->
+                    <li>
+                        <a href="https://www.instagram.com/adecs_2428" target="_blank" rel="noopener noreferrer">
+                            <img src="instagram-icon.png" alt="Instagram" />
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <img src="linkedin-icon.png" alt="LinkedIn" />
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- <div class="footer-section">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#paleta-cores">Paleta de Cores</a></li>
+                    <li><a href="#fontes">Fontes</a></li>
+                    <li><a href="#sobre">Sobre o Projeto</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div> -->
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 O Encontro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.display = section.id === sectionId ? 'block' : 'none';
+            });
+
+            // Ocultar detalhes ao mudar de seção  
+            document.getElementById('details').style.display = 'none';
+        }
+
+        function showDetails(type, value) {
+            const details = document.getElementById('details');
+            details.innerHTML = '';
+
+            if (type === 'color') {
+                const colorDetails = {
+                    '#3B82F6': {
+                        meaning: "Confiança e calma. Use para títulos ou elementos que chamam atenção sem ser agressivo.",
+                        rules: [
+                            "Em banners digitais para promover eventos importantes.",
+                            "Como fundo de botões de chamada para ação (CTA).",
+                            "Sempre combinado com fontes claras para legibilidade."
+                        ]
+                    },
+                    '#7C3AED': {
+                        meaning: "Criatividade e espiritualidade. Ideal para destacar elementos decorativos ou temas espirituais.",
+                        rules: [
+                            "Em títulos de seções que enfatizam conexões espirituais ou mensagens motivacionais.",
+                            "Para gráficos ou elementos de destaque em convites."
+                        ]
+                    },
+                    '#FBBF24': {
+                        meaning: "Energia e otimismo. Perfeito para atrair olhares e criar contrastes.",
+                        rules: [
+                            "Em datas ou horários importantes em banners.",
+                            "Como destaque em rodapés ou bordas."
+                        ]
+                    },
+                    '#FFFFFF': {
+                        meaning: "Pureza e clareza. Base neutra para outros elementos.",
+                        rules: [
+                            "Como cor de fundo principal para garantir simplicidade.",
+                            "Deve ser combinado com textos e gráficos coloridos para evitar monotonia."
+                        ]
+                    },
+                    '#1F2937': {
+                        meaning: "Sofisticação e autoridade. Use para textos e elementos de suporte.",
+                        rules: [
+                            "Para fontes de corpo de texto.",
+                            "Não utilizar como fundo principal, exceto em cartazes com temática séria."
+                        ]
+                    }
+                };
+
+                const colorInfo = colorDetails[value];
+
+                details.innerHTML = `  
+                    <h2>Detalhes para ${value}</h2>  
+                    <div style="background-color: ${value}; width: 100%; height: 100px; border-radius: 8px; margin: 10px 0;"></div>  
+                    <p><strong>Significado:</strong> ${colorInfo.meaning}</p>  
+                    <p><strong>Regras de Uso:</strong></p>  
+                    <ul>  
+                        ${colorInfo.rules.map(rule => `<li>${rule}</li>`).join('')}  
+                    </ul>  
+                `;
+            }
+
+            details.style.display = 'block'; // Mostrar detalhes ao clicar na cor  
+        }
+
+        function showFontDetails(fontName) {
+            const details = document.getElementById('details');
+            details.innerHTML = '';
+
+            const fontDetails = {
+                'Montserrat': {
+                    description: "Uma fonte moderna e versátil, ideal para títulos e textos de destaque.",
+                    examples: [
+                        "Uso em cabeçalhos de eventos.",
+                        "Design de logotipos."
+                    ]
+                },
+                'Pacifico': {
+                    description: "Uma fonte cursiva, ideal para transmitir um sentimento descontraído e festivo.",
+                    examples: [
+                        "Convites a eventos.",
+                        "Banner decorativo."
+                    ]
+                },
+                'Poppins': {
+                    description: "Uma fonte sans-serif clássica, perfeita para textos informativos e legíveis.",
+                    examples: [
+                        "Corpo de texto de documentos.",
+                        "Folhetos informativos."
+                    ]
+                }
+            };
+
+            const fontInfo = fontDetails[fontName];
+
+            details.innerHTML = `  
+                <h2>Detalhes da Fonte: ${fontName}</h2>  
+                <p><strong>Descrição:</strong> ${fontInfo.description}</p>  
+                <p><strong>Exemplos de Uso:</strong></p>  
+                <ul>  
+                    ${fontInfo.examples.map(example => `<li>${example}</li>`).join('')}  
+                </ul>  
+            `;
+
+            details.style.display = 'block'; // Mostrar detalhes ao clicar na fonte  
+        }  
+    </script>
+</body>
+
+</html>
